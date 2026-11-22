@@ -1,0 +1,85 @@
+/* ============================================================
+   style.css — единый стиль для всех страниц сайта.
+   Bootstrap подключён через CDN, здесь только «докрутка»
+   под фирменные цвета и центрирование форм/таблиц.
+   ============================================================ */
+
+/* Сбрасываем box-sizing для предсказуемой ширины */
+* { box-sizing: border-box; }
+
+/* Базовые настройки body */
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* системный шрифт */
+    font-size: 15px;                                        /* основной размер */
+    line-height: 1.5;                                       /* межстрочный интервал */
+    color: #222;                                            /* цвет текста */
+    background: #f5f7fa;                                    /* светло-серый фон */
+    margin: 0;                                              /* убираем отступы по краям */
+    padding: 0 0 40px;                                      /* нижний отступ для «воздуха» */
+}
+
+/* Заголовки — фирменный тёмно-синий цвет */
+h1, h2, h3 { color: #1a3d6d; }
+
+/* Ссылки без подчёркивания по умолчанию */
+a { color: #1a3d6d; text-decoration: none; }
+a:hover { text-decoration: underline; } /* при наведении подчёркиваем */
+
+/* ---------- Карточка авторизации / регистрации ---------- */
+.auth-card {
+    max-width: 460px;          /* ограничиваем ширину */
+    margin: 40px auto;         /* центрируем по горизонтали + отступ сверху */
+    padding: 30px;             /* внутренние отступы */
+    background: #fff;          /* белый фон */
+    border-radius: 10px;       /* скруглённые углы */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08); /* мягкая тень */
+}
+
+/* Заголовок внутри auth-card по центру */
+.auth-card h1 { text-align: center; margin-bottom: 24px; }
+
+/* Метки полей — жирнее и с отступом */
+.auth-card label { font-weight: 600; margin-bottom: 4px; }
+
+/* Кнопка в auth-card — на всю ширину */
+.auth-card .btn { width: 100%; }
+
+/* Ссылки под формой — по центру */
+.auth-card .auth-links { text-align: center; margin-top: 16px; }
+
+/* ---------- Карточки помещений ---------- */
+.room-card {
+    border: none;                               /* убираем рамку Bootstrap */
+    border-radius: 10px;                        /* скруглённые углы */
+    overflow: hidden;                           /* чтобы картинка не вылезала */
+    transition: transform .2s ease, box-shadow .2s ease; /* плавный hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.room-card:hover {
+    transform: translateY(-3px);                /* приподнимаем карточку */
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Картинка карточки — фиксированная высота, обрезаем лишнее */
+.room-card .card-img-top {
+    height: 200px;
+    object-fit: cover;                          /* заполняет блок без искажений */
+}
+
+/* ---------- Таблицы ---------- */
+.table th,
+.table td { vertical-align: middle; }           /* выравниваем по центру по вертикали */
+
+/* Обёртка таблицы — скруглённые углы и тень */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Сообщения (alert) ---------- */
+.alert { border-radius: 8px; }                  /* скругляем alert-блоки */
+
+/* ---------- Кнопки в навбаре ---------- */
+.navbar .btn { border-radius: 6px; }            /* скруглённые кнопки в шапке */
